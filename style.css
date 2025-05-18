@@ -1,0 +1,369 @@
+    /* Reset and base */
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f5f7fa;
+      color: #2d3748;
+      line-height: 1.6;
+      scroll-behavior: smooth;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    h1, h2, h3 {
+      font-family: 'Pompiere', cursive;
+      margin: 0 0 0.5em 0;
+      color: #1a202c;
+    }
+    p, li {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      color: #4a5568;
+    }
+    ul, ol {
+      padding-left: 1.5rem;
+      margin: 0.5em 0 1em 0;
+    }
+    ol {
+      list-style-type: decimal;
+    }
+    a {
+      color: #3182ce;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover,
+    a:focus {
+      color: #2b6cb0;
+      outline: none;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* Navigation */
+    .navi {
+      background: #2d3748;
+      color: white;
+      padding: 1rem 1.5rem;
+      box-shadow: 0 2px 8px rgb(45 55 72 / 0.3);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      will-change: transform, opacity;
+    }
+    .navi.hidden {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+    .navi h1 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      user-select: none;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: #63b3ed;
+    }
+    .navi nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+    }
+    .navi nav ul li a {
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 0.3rem 0.5rem;
+      border-radius: 6px;
+      display: inline-block;
+      user-select: none;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .navi nav ul li a:hover,
+    .navi nav ul li a:focus {
+      background: #63b3ed;
+      color: #1a202c;
+      outline-offset: 2px;
+      outline: 2px solid #bee3f8;
+    }
+
+    /* Hero Section */
+    #hero-section {
+      background: #edf2f7;
+      padding: 6rem 0 5rem;
+      text-align: center;
+      box-shadow: inset 0 -4px 8px rgb(0 0 0 / 0.05);
+      margin-top: 64px; /* height of nav */
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+    .hero-img {
+      width: 180px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.12);
+      user-select: none;
+      border: 6px solid #63b3ed;
+      transition: transform 0.3s ease;
+    }
+    .hero-img:hover,
+    .hero-img:focus {
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 12px 28px rgb(0 0 0 / 0.2);
+    }
+    #hero-section h2 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-top: 0;
+      margin-bottom: 0.5rem;
+      color: #2c5282;
+      letter-spacing: 0.05em;
+    }
+    #hero-section p {
+      font-size: 1.25rem;
+      max-width: 600px;
+      font-style: italic;
+      color: #4a5568;
+      line-height: 1.5;
+    }
+
+    /* Section Padding */
+    .section-padding {
+      padding: 4rem 0;
+    }
+
+    /* Tabs Navigation */
+    .tabs-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+      margin-bottom: 3rem;
+    }
+    .tab-button {
+      background: #e2e8f0;
+      border: none;
+      padding: 0.75rem 1.8rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border-radius: 9999px;
+      cursor: pointer;
+      color: #2d3748;
+      box-shadow: 0 2px 6px rgb(45 55 72 / 0.15);
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      user-select: none;
+      min-width: 120px;
+      text-align: center;
+      flex-grow: 1;
+      max-width: 220px;
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .tab-button:hover,
+    .tab-button:focus {
+      background: #63b3ed;
+      color: white;
+      outline: none;
+      box-shadow: 0 6px 16px rgb(99 179 237 / 0.6);
+    }
+    .tab-button.active {
+      background: #3182ce;
+      color: white;
+      box-shadow: 0 8px 20px rgb(49 130 206 / 0.8);
+      cursor: default;
+    }
+
+    /* Tab Content */
+    .tab-content {
+      display: none;
+      background: white;
+      border-radius: 16px;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 12px 32px rgb(0 0 0 / 0.1);
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      user-select: text;
+      transition: opacity 0.3s ease;
+    }
+    .tab-content.active {
+      display: block;
+      opacity: 1;
+    }
+    .tab-content h3 {
+      font-size: 2.25rem;
+      margin-bottom: 1.25rem;
+      color: #2b6cb0;
+      letter-spacing: 0.04em;
+    }
+    .tab-content p {
+      font-size: 1.15rem;
+      margin-bottom: 1.25rem;
+      color: #4a5568;
+      line-height: 1.6;
+    }
+    .tab-content ul,
+    .tab-content ol {
+      margin-left: 1.75rem;
+      margin-bottom: 1.5rem;
+      color: #718096;
+      font-size: 1.05rem;
+      line-height: 1.5;
+    }
+    .tab-content ul li,
+    .tab-content ol li {
+      margin-bottom: 0.6rem;
+    }
+
+    /* Team Profile Section */
+    #team-profile {
+      background: #ebf4ff;
+      padding-top: 4rem;
+      padding-bottom: 5rem;
+      user-select: none;
+      box-shadow: inset 0 4px 8px rgb(0 0 0 / 0.03);
+    }
+    .team-intro-text {
+      font-size: 1.4rem;
+      font-weight: 700;
+      max-width: 720px;
+      margin: 0 auto 3rem auto;
+      color: #2b6cb0;
+      font-family: 'Pompiere', cursive;
+      letter-spacing: 0.04em;
+      line-height: 1.4;
+    }
+    .team-members-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2.5rem;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .team-member-card {
+      background: white;
+      border-radius: 1.25rem;
+      padding: 2rem 2.5rem 3rem;
+      box-shadow: 0 12px 28px rgb(0 0 0 / 0.12);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      user-select: text;
+    }
+    .team-member-card:hover,
+    .team-member-card:focus-within {
+      transform: translateY(-8px);
+      box-shadow: 0 16px 40px rgb(0 0 0 / 0.18);
+      outline: none;
+    }
+    .team-member-card img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 8px 20px rgb(0 0 0 / 0.15);
+      user-select: none;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      border: 5px solid #3182ce;
+      transition: transform 0.3s ease;
+    }
+    .team-member-card img:hover,
+    .team-member-card img:focus {
+      transform: scale(1.05);
+      outline: none;
+      box-shadow: 0 12px 28px rgb(0 0 0 / 0.25);
+    }
+    .team-member-card ol {
+      padding-left: 0;
+      margin: 0;
+      font-weight: 600;
+      color: #4a5568;
+      font-size: 1.05rem;
+      line-height: 1.6;
+      text-align: left;
+      max-width: 260px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .team-member-card ol li {
+      margin-bottom: 0.7rem;
+    }
+
+    /* Footer */
+    footer {
+      background: #2d3748;
+      color: #cbd5e0;
+      text-align: center;
+      padding: 1.5rem 1rem;
+      font-size: 0.9rem;
+      margin-top: auto;
+      user-select: none;
+      letter-spacing: 0.05em;
+    }
+
+    /* Responsive */
+    @media (max-width: 640px) {
+      .navi {
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+      .navi h1 {
+        margin-bottom: 0.5rem;
+      }
+      .navi nav ul {
+        justify-content: center;
+        gap: 1.25rem;
+      }
+      .hero-content {
+        padding: 0 1rem;
+      }
+      #hero-section h2 {
+        font-size: 2.4rem;
+      }
+      .tab-button {
+        max-width: 100%;
+        flex-grow: 1;
+        font-size: 1rem;
+        padding: 0.6rem 1.2rem;
+      }
+      .tab-content {
+        padding: 1.5rem 1.5rem;
+      }
+      .team-member-card {
+        padding: 1.5rem 1.5rem 2rem;
+      }
+      .team-member-card ol {
+        max-width: 100%;
+      }
+    }
